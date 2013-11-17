@@ -1,3 +1,15 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+PS1='[\u@\h \W]\$ '
+
+source /usr/share/git/completion/git-completion.bash
+
 # Display unstaged (*) and staged(+) changes
 export GIT_PS1_SHOWDIRTYSTATE="1"
 
