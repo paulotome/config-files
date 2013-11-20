@@ -25,19 +25,36 @@ export GIT_PS1_SHOWCOLORHINTS=true
 # Display if we're ahead (>) or behind (<) or diverged (<>) relative to upstream
 export GIT_PS1_SHOWUPSTREAM="auto verbose git"
 
-# If you would like to see more information about the identity of 
-# commits checked out as a detached HEAD, set GIT_PS1_DESCRIBE_STYLE 
-# to one of these values: 
-# 
-#     contains      relative to newer annotated tag (v1.6.3.2~35) 
-#     branch        relative to newer tag or branch (master~4) 
-#     describe      relative to older annotated tag (v1.6.3.1-13-gdd42c2f) 
-#     default       exactly matching tag 
+# If you would like to see more information about the identity of
+# commits checked out as a detached HEAD, set GIT_PS1_DESCRIBE_STYLE
+# to one of these values:
+#
+#     contains      relative to newer annotated tag (v1.6.3.2~35)
+#     branch        relative to newer tag or branch (master~4)
+#     describe      relative to older annotated tag (v1.6.3.1-13-gdd42c2f)
+#     default       exactly matching tag
 export GIT_PS1_DESCRIBE_STYLE="branch"
 
+# http://unix.stackexchange.com/questions/119/colors-in-man-pages
+# Get color support for 'less'
+export LESS="--RAW-CONTROL-CHARS"
 
+# Use colors for less, man, etc.
+[[ -f ~/.LESS_TERMCAP ]] && . ~/.LESS_TERMCAP
 
-# PROMPT_COMMAND='__git_ps1 "\u \W" "\\\$ " "{%s $(get_ssh)}"' 
+# https://wiki.archlinux.org/index.php/Man_Page
+# man() {
+#     env LESS_TERMCAP_mb=$'\E[01;31m' \
+# 	LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+# 	LESS_TERMCAP_me=$'\E[0m' \
+# 	LESS_TERMCAP_se=$'\E[0m' \
+# 	LESS_TERMCAP_so=$'\E[38;5;246m' \
+# 	LESS_TERMCAP_ue=$'\E[0m' \
+# 	LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+# 	man "$@"
+# }
+
+# PROMPT_COMMAND='__git_ps1 "\u \W" "\\\$ " "{%s $(get_ssh)}"'
 # DEFAULT_COLOR='\[\e[0m\]'
 # BLACK='\[\e[0;30m\]'
 # LTBLUE='\[\e[1;34m\]'
@@ -47,7 +64,7 @@ export GIT_PS1_DESCRIBE_STYLE="branch"
 # GIT_CHANGE_COLOR=$LTRED
 # GIT_NO_CHANGE_COLOR="$BLACK"
 
-# gitPrompt() { 
+# gitPrompt() {
 #   local gitPrompt=$(__git_ps1)
 #   local gitColor="$GIT_NO_CHANGE_COLOR"
 #   if [ -n "$gitPrompt" ]; then
@@ -65,20 +82,21 @@ export GIT_PS1_DESCRIBE_STYLE="branch"
 #  version= pik info | awk '/full_version/ {print $2,$3}' | sed 's/\"//;s/\s/\-/'
 #  printf "${version}"
 # }
- 
+
 # function prompt {
 #   local LIGHT_RED="\[\033[1;31m\]"
 #   local LIGHT_GREEN="\[\033[1;32m\]"
 #  local NO_COLOUR="\[\033[0m\]"
-# 
+#
 #  local TITLEBAR='\[\033]0;\u@\h\007\]'
- 
+
 #  export GIT_PS1_SHOWDIRTYSTATE=true
 #  export GIT_PS1_SHOWUNTRACKEDFILES=true
   # export GIT_PS1_SHOWUPSTREAM=auto
 #  export GIT_PS1_SHOWSTASHSTATE=true
- 
+
 #  PS1="$TITLEBAR\n\w/$LIGHT_GREEN\$(__git_ps1 ' (%s)')$LIGHT_RED \$(pik_info)\n$NO_COLOUR$ "
 #}
- 
+
 # prompt
+
