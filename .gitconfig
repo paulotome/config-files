@@ -1,16 +1,16 @@
+[user]
+	user = ptome
+	name = Paulo Tome
+	email = paulo.jorge.tome@gmail.com
 [color]
 	ui = true
 	branch = auto
 	diff = auto
 	status = auto
-[user]
-	user = ptome
-	name = Paulo Tome
-	email = paulo.jorge.tome@gmail.com
 [core]
 	editor = emacs
 [push]
-	default = simple
+	default = tracking
 [branch "master"]
     remote = origin
     merge = refs/heads/master
@@ -44,3 +44,5 @@
 	sl = stash list
 	sa = stash apply
 	ss = stash save
+[branch]
+	autosetuprebase = always
