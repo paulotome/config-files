@@ -1,3 +1,12 @@
+;; http://homepages.inf.ed.ac.uk/s0243221/emacs/
+;; ========== Enable Line and Column Numbering ==========
+
+;; Show line-number in the mode line
+(line-number-mode 1)
+
+;; Show column-number in the mode line
+(column-number-mode 1)
+
 (setq mouse-wheel-progressive-speed nil)
 
 (setq-default show-trailing-whitespace t)
