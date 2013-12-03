@@ -9,13 +9,14 @@
 	status = auto
 [core]
 	editor = emacs
+	attributesfile = ~/.gitattributes
 [push]
 	default = tracking
 [branch "master"]
     remote = origin
     merge = refs/heads/master
 [github]
-	user = paulo.tome
+	user = paulotome
 [alias]
 	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
@@ -46,3 +47,5 @@
 	ss = stash save
 [branch]
 	autosetuprebase = always
+[diff "lisp"]
+    xfuncname="^;;;([A-Z][-A-Z0-9\\. \\(\\)]+)$"
