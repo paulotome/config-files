@@ -9,16 +9,19 @@
 	status = auto
 [core]
 	editor = emacs
+	createObject = link
 	attributesfile = ~/.gitattributes
+[diff "lisp"]
+    xfuncname="^;;;([A-Z][-A-Z0-9\\. \\(\\)]+)$"
 # http://stackoverflow.com/questions/11872984/what-is-the-difference-between-git-push-default-current-and-push-default-upstrea
 [push]
 	default = tracking
-[branch]
-	autosetuprebase = always
-	autosetupmerge = true
 [branch "master"]
     remote = origin
     merge = refs/heads/master
+[branch]
+	autosetuprebase = always
+	autosetupmerge = true
 [github]
 	user = paulotome
 [alias]
@@ -49,5 +52,3 @@
 	sl = stash list
 	sa = stash apply
 	ss = stash save
-[diff "lisp"]
-    xfuncname="^;;;([A-Z][-A-Z0-9\\. \\(\\)]+)$"
