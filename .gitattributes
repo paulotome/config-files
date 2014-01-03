@@ -1,2 +1,3 @@
 *.lisp diff=lisp
 *.cl   diff=lisp
+*.el   diff=lisp
