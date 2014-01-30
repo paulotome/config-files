@@ -52,3 +52,4 @@
 	sl = stash list
 	sa = stash apply
 	ss = stash save
+	pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/vdev"
