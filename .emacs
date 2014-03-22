@@ -125,50 +125,22 @@
 ;;(tool-bar-mode 0)
 (tool-bar-mode -1)
 
-
-
-
-(put 'with.mandatory.translations 'fi:lisp-indent-hook '(like dolist))
-(put 'within.data.node 'fi:lisp-indent-hook '(like dolist))
-(put 'with.intersecting.freq.train.frequency 'fi:lisp-indent-hook '(like when))
-(put 'with.file.locked 'fi:lisp-indent-hook '(like dolist))
-(put 'saving.resource 'fi:lisp-indent-hook '(like dolist))
-(put 'updating.resource 'fi:lisp-indent-hook '(like dolist))
-(put 'with.initial.import.delivery.options 'fi:lisp-indent-hook '(like dolist))
-(put 'with.reader.errors 'fi:lisp-indent-hook '(like dolist))
-(put 'with.service.events 'fi:lisp-indent-hook '(like dolist))
-(put 'with.collecting.messages 'fi:lisp-indent-hook '(like dolist))
-(put 'with.fbinds 'fi:lisp-indent-hook '(like when))
-(put 'with.partition 'fi:lisp-indent-hook '(like when))
-(put 'with.progress.actions 'fi:lisp-indent-hook '(like when))
-(put 'with.state.tree 'fi:lisp-indent-hook '(like when))
-(put 'with.sand.glass 'fi:lisp-indent-hook '(like let))
-(put 'with.limited.comparing.items 'fi:lisp-indent-hook '(like when))
-(put 'with.calendar.context 'fi:lisp-indent-hook '(like when))
-(put 'do.tuples 'fi:lisp-indent-hook '(like when))
-(put 'sg-with-open-cursors 'fi:lisp-indent-hook '(like let))
-(put 'collecting 'fi:lisp-indent-hook '(like let))
-(put 'do.resources 'fi:lisp-indent-hook '(like when))
-(put 'once.only 'fi:lisp-indent-hook '(like when))
-
-;;; (put ' 'fi:lisp-indent-hook '(like when))
-
 ;; ******************************************************
 ;; *                    EMACS - SLIME           	*
 ;; ******************************************************
 
 ;;; auto-complete
-(add-to-list 'load-path "~/.emacs.d/auto-complete/")
-(add-to-list 'load-path "~/.emacs.d/paulo/")
-(require 'auto-complete-config)
-(ac-config-default)
+;;(add-to-list 'load-path "~/.emacs.d/auto-complete/")
+;;(add-to-list 'load-path "~/.emacs.d/paulo/")
+;;(require 'auto-complete-config)
+;;(ac-config-default)
 
 ;;; auto-complete slime
-(require 'ac-slime)
-(add-hook 'slime-mode-hook 'set-up-slime-ac)
-(add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
-(eval-after-load "auto-complete"
-		 '(add-to-list 'ac-modes 'slime-repl-mode))
+;;(require 'ac-slime)
+;;(add-hook 'slime-mode-hook 'set-up-slime-ac)
+;;(add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
+;;(eval-after-load "auto-complete"
+;;		 '(add-to-list 'ac-modes 'slime-repl-mode))
 
 
 ;; How to customize Emacs split-window-X with the new window showing the next buffer?
