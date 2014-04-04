@@ -259,3 +259,21 @@
           (rename-buffer new-name)
           (set-visited-file-name new-name)
           (set-buffer-modified-p nil))))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ORG MODE ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'org-latex)
+
+(unless (boundp 'org-export-latex-classes)
+  (setq org-export-latex-classes nil))
+
+(add-to-list 'org-export-latex-classes
+             '("article"
+               "\\documentclass{article}"
+               ("\\section{%s}" . "\\section*{%s}")))
+
+;; (setq org-agenda-files '("z:/ptome/Org's/clock.org"))
+
+(add-hook 'org-mode-hook
+          (lambda ()
+            (org-indent-mode t))
+          t)
