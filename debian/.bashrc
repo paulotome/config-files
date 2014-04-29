@@ -97,6 +97,32 @@ xterm*|rxvt*)
     ;;
 esac
 
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    #alias grep='grep --color=auto'
+    #alias fgrep='fgrep --color=auto'
+    #alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+#alias ll='ls -l'
+#alias la='ls -A'
+#alias l='ls -CF'
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
 # if the command-not-found package is installed, use it
 if [ -x /usr/lib/command-not-found -o -x /usr/share/command-not-found ]; then
 	function command_not_found_handle {
@@ -155,62 +181,3 @@ export LESS="--RAW-CONTROL-CHARS"
 
 # Use colors for less, man, etc.
 [[ -f ~/.LESS_TERMCAP ]] && . ~/.LESS_TERMCAP
-
-# https://wiki.archlinux.org/index.php/Man_Page
-# man() {
-#     env LESS_TERMCAP_mb=$'\E[01;31m' \
-# 	LESS_TERMCAP_md=$'\E[01;38;5;74m' \
-# 	LESS_TERMCAP_me=$'\E[0m' \
-# 	LESS_TERMCAP_se=$'\E[0m' \
-# 	LESS_TERMCAP_so=$'\E[38;5;246m' \
-# 	LESS_TERMCAP_ue=$'\E[0m' \
-# 	LESS_TERMCAP_us=$'\E[04;38;5;146m' \
-# 	man "$@"
-# }
-
-# PROMPT_COMMAND='__git_ps1 "\u \W" "\\\$ " "{%s $(get_ssh)}"'
-# DEFAULT_COLOR='\[\e[0m\]'
-# BLACK='\[\e[0;30m\]'
-# LTBLUE='\[\e[1;34m\]'
-# LTRED='\[\e[1;31m\]'
-
-# USER_COLOR=$LTBLUE
-# GIT_CHANGE_COLOR=$LTRED
-# GIT_NO_CHANGE_COLOR="$BLACK"
-
-# gitPrompt() {
-#   local gitPrompt=$(__git_ps1)
-#   local gitColor="$GIT_NO_CHANGE_COLOR"
-#   if [ -n "$gitPrompt" ]; then
-#     branch=$(git symbolic-ref HEAD 2>/dev/null)
-#     if [ "$gitPrompt" != " (${branch##refs/heads/})" ]; then
-#       gitColor="$GIT_CHANGE_COLOR"
-#     fi
-#   fi
-#   echo "$USER_COLOR\u@\h:\W$gitColor$gitPrompt$DEFAULT_COLOR$ "
-# }
-
-# PROMPT_COMMAND='PS1="$(gitPrompt)"'
-
-# pik_info() {
-#  version= pik info | awk '/full_version/ {print $2,$3}' | sed 's/\"//;s/\s/\-/'
-#  printf "${version}"
-# }
-
-# function prompt {
-#   local LIGHT_RED="\[\033[1;31m\]"
-#   local LIGHT_GREEN="\[\033[1;32m\]"
-#  local NO_COLOUR="\[\033[0m\]"
-#
-#  local TITLEBAR='\[\033]0;\u@\h\007\]'
-
-#  export GIT_PS1_SHOWDIRTYSTATE=true
-#  export GIT_PS1_SHOWUNTRACKEDFILES=true
-  # export GIT_PS1_SHOWUPSTREAM=auto
-#  export GIT_PS1_SHOWSTASHSTATE=true
-
-#  PS1="$TITLEBAR\n\w/$LIGHT_GREEN\$(__git_ps1 ' (%s)')$LIGHT_RED \$(pik_info)\n$NO_COLOUR$ "
-#}
-
-# prompt
-
