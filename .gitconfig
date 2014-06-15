@@ -1,55 +1,54 @@
 [user]
-	user = ptome
-	name = Paulo Jorge Tomé
-	email = paulo.jorge.tome@gmail.com
+        user = ptome
+        name = Paulo Jorge Tomé
+        email = paulo.jorge.tome@gmail.com
 [color]
-	ui = true
-	branch = auto
-	diff = auto
-	status = auto
+        ui = true
+        branch = auto
+        diff = auto
+        status = auto
 [core]
-	editor = emacs
-	createObject = link
-	attributesfile = ~/.gitattributes
+        editor = emacs
+        createObject = link
+        attributesfile = ~/.gitattributes
 [diff "lisp"]
     xfuncname="^;;;([A-Z][-A-Z0-9\\. \\(\\)]+)$"
 # http://stackoverflow.com/questions/11872984/what-is-the-difference-between-git-push-default-current-and-push-default-upstrea
 [push]
-	default = upstream
+        default = upstream
 [branch "master"]
-    remote = origin
     merge = refs/heads/master
 [branch]
-	autosetuprebase = always
-	autosetupmerge = true
+        autosetuprebase = always
+        autosetupmerge = true
 [github]
-	user = paulotome
+        user = paulotome
 [alias]
-	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
-	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
-	le = log --oneline --decorate
-	filelog = log -u
-	fl = log -u
-	dl = "!git ll -1"
-	dlc = diff --cached HEAD^
-	dr  = "!f() { git diff "$1"^.."$1"; }; f"
-	lc  = "!f() { git ll "$1"^.."$1"; }; f"
-	diffr  = "!f() { git diff "$1"^.."$1"; }; f"
-	f = "!git ls-files | grep -i"
-	grep = grep -Ii
-	gr = grep -Ii
-	gra = "!f() { A=$(pwd) && TOPLEVEL=$(git rev-parse --show-toplevel) && cd $TOPLEVEL && git grep --full-name -In $1 | xargs -I{} echo $TOPLEVEL/{} && cd $A; }; f"
-	la = "!git config -l | grep alias | cut -c 7-"
-	r = reset
-	r1 = reset HEAD^
-	r2 = reset HEAD^^
-	rh = reset --hard
-	rh1 = reset HEAD^ --hard
-	rh2 = reset HEAD^^ --hard
-	sl = stash list
-	sa = stash apply
-	ss = stash save
-	pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/vdev"
+        ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+        ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+        lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+        lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+        ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+        le = log --oneline --decorate
+        filelog = log -u
+        fl = log -u
+        dl = "!git ll -1"
+        dlc = diff --cached HEAD^
+        dr  = "!f() { git diff "$1"^.."$1"; }; f"
+        lc  = "!f() { git ll "$1"^.."$1"; }; f"
+        diffr  = "!f() { git diff "$1"^.."$1"; }; f"
+        f = "!git ls-files | grep -i"
+        grep = grep -Ii
+        gr = grep -Ii
+        gra = "!f() { A=$(pwd) && TOPLEVEL=$(git rev-parse --show-toplevel) && cd $TOPLEVEL && git grep --full-name -In $1 | xargs -I{} echo $TOPLEVEL/{} && cd $A; }; f"
+        la = "!git config -l | grep alias | cut -c 7-"
+        r = reset
+        r1 = reset HEAD^
+        r2 = reset HEAD^^
+        rh = reset --hard
+        rh1 = reset HEAD^ --hard
+        rh2 = reset HEAD^^ --hard
+        sl = stash list
+        sa = stash apply
+        ss = stash save
+        pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/vdev"
