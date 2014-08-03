@@ -11,13 +11,16 @@
         editor = emacs
         createObject = link
         attributesfile = ~/.gitattributes
+	 ; Don't trust file modes
+        filemode = false
 [diff "lisp"]
-    xfuncname="^;;;([A-Z][-A-Z0-9\\. \\(\\)]+)$"
+	xfuncname="^;;;([A-Z][-A-Z0-9\\. \\(\\)]+)$"
 # http://stackoverflow.com/questions/11872984/what-is-the-difference-between-git-push-default-current-and-push-default-upstrea
 [push]
         default = upstream
 [branch "master"]
-    merge = refs/heads/master
+	merge = refs/heads/master
+	remote = origin
 [branch]
         autosetuprebase = always
         autosetupmerge = true
