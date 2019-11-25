@@ -6,7 +6,7 @@
 # To use `gpg-agent' in Emacs, you need to run the following command from
 # the shell before starting Emacs.
 # (Info-goto-node "(message)Security")
-eval `gpg-agent --daemon`
+#eval `gpg-agent --daemon`
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -121,6 +121,7 @@ fi
 #alias ll='ls -l'
 #alias la='ls -A'
 #alias l='ls -CF'
+#alias ls='ls -ls -FAlht --color=auto --show-control-chars --group-directories-first'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
