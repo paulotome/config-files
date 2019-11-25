@@ -121,7 +121,7 @@ fi
 #alias ll='ls -l'
 #alias la='ls -A'
 #alias l='ls -CF'
-#alias ls='ls -ls -FAlht --color=auto --show-control-chars --group-directories-first'
+#alias ls='ls -ls -FAlh --color=auto --show-control-chars --group-directories-first'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
