@@ -1,7 +1,9 @@
 [user]
-        user = ptome
-        name = Paulo Jorge Tomé
-        email = paulo.jorge.tome@gmail.com
+	user = ptome
+	name = Paulo Tomé
+	email = paulo.tome@siscog.pt
+	signingkey = 4C07521D8B059211
+[gui]
 [color]
 	diff = auto
 	status = auto
@@ -10,30 +12,40 @@
 	ui = true
 	pager = true
 [core]
-        editor = emacs
-        createObject = link
-        attributesfile = ~/.gitattributes
-	 ; Don't trust file modes
-        filemode = false
+	editor = \"c:/siscog-dev-tools/emacs-25.2-x86_64/bin/emacsclientw.exe\"
+	autocrlf = false
+	createObject = link
+	attributesfile = ~/.gitattributes
+	trustctime = false
 	excludesfile = ~/.gitignore_global
+	filemode = false
 [diff]
 	tool = emacs-tool
 	guitool = emacs-tool
 	renamelimit = 0
+[diff "lisp"]
+	xfuncname = ^\\(([^ ]+ [^ \\)]+)
+[diff "strings"]
+	textconv = \"c:\\WINDOWS\\strings.exe\"
+	cachetextconv = true
+[difftool "emacs-tool"]
+	cmd = cmd //c c:/siscog-dev-tools/emacs-tool/emacs-tool.bat $LOCAL $REMOTE $BASE
 [merge]
 	tool = emacs-tool
 	guitool = emacs-tool
-[diff "lisp"]
-	xfuncname="^;;;([A-Z][-A-Z0-9\\. \\(\\)]+)$"
-# http://stackoverflow.com/questions/11872984/what-is-the-difference-between-git-push-default-current-and-push-default-upstrea
+[merge "mash"]
+	name = The most amazing merge in my network
+	driver = ~/mash/mash %A %O %B %A
+[mergetool]
+	keepBackup = false
+[mergetool "emacs-tool"]
+	cmd = cmd //c c:/siscog-dev-tools/emacs-tool/emacs-tool.bat $LOCAL $REMOTE $BASE $MERGED
+	trustExitCode = false
 [push]
 	default = tracking
-[branch "master"]
-	merge = refs/heads/master
-	remote = origin
 [branch]
 	autosetuprebase = always
-	autosetupmerge = true
+	autoSetupMerge = always
 [github]
 	user = paulotome
 [alias]
@@ -47,9 +59,9 @@
 	fl = log -u
 	dl = "!git ll -1"
 	dlc = diff --cached HEAD^
-	dr  = "!f() { git diff "$1"^.."$1"; }; f"
-	lc  = "!f() { git ll "$1"^.."$1"; }; f"
-	diffr  = "!f() { git diff "$1"^.."$1"; }; f"
+	dr = "!f() { git diff "$1"^.."$1"; }; f"
+	lc = "!f() { git ll "$1"^.."$1"; }; f"
+	diffr = "!f() { git diff "$1"^.."$1"; }; f"
 	f = "!git ls-files | grep -i"
 	grep = grep -Ii
 	gr = grep -Ii
@@ -64,10 +76,19 @@
 	sl = stash list
 	sa = stash apply
 	ss = stash save
-	pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/vdev"
-
-[mergetool]
-	keepBackup = false
+	pu = !"git fetch origin -v"
+	pul = pull
+	ff = merge --ff-only
+	p = pull
+	st = status
+	f = fetch
 [i18n]
 	commitEncoding = utf8
 	logOutputEncoding = utf8
+[sendemail]
+	smtpencryption = tls
+	smtpserver = mail2.siscog.com
+	smtpuser = ptome@siscog.pt
+	smtpserverport = 465
+[credential]
+	helper = !\"C:/siscog-dev-tools/GitExtensions/GitCredentialWinStore/git-credential-winstore.exe\"
